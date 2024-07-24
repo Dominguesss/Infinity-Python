@@ -1,0 +1,25 @@
+def calcular_media(notas):
+    # Calcula a média das notas
+    total_notas = sum(notas)
+    media = total_notas / len(notas)
+    return media
+
+def verificar_situacao(media):
+    # Verifica a situação do aluno com base na média
+    if media < 7:
+        return "Reprovado"
+    elif media == 10:
+        return "Parabéns, sua média é 10"
+    else:
+        return "Aprovado"
+
+# Solicita ao usuário que digite as notas separadas por vírgula
+entrada_notas = input("Digite as notas separadas por vírgula: ")
+notas = [float(nota) for nota in entrada_notas.split(",")]
+
+# Calcula a média
+media_aluno = calcular_media(notas)
+
+# Verifica a situação e exibe o resultado
+situacao = verificar_situacao(media_aluno)
+print(f"Sua média é {media_aluno:.2f}. Situação: {situacao}")
