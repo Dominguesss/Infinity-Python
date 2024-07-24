@@ -1,0 +1,30 @@
+from functools import reduce
+
+# Lista de números
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Função para calcular o quadrado de um número
+def calcular_quadrado(numero):
+    return numero ** 2
+
+# Função para verificar se um número é par
+def eh_par(numero):
+    return numero % 2 == 0
+
+# Função para somar dois números
+def somar(a, b):
+    return a + b
+
+# Aplicando as operações
+quadrados = list(map(calcular_quadrado, numeros))
+numeros_pares = list(filter(eh_par, numeros))
+soma_total = reduce(somar, numeros)
+
+print("Quadrados:", quadrados)
+print("Números pares:", numeros_pares)
+print("Soma total:", soma_total)
+
+# A saída será 
+Quadrados: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+Números pares: [2, 4, 6, 8, 10]
+Soma total: 55
